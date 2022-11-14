@@ -25,6 +25,9 @@
     <tool name="Multiplexer">
       <a name="enable" val="false"/>
     </tool>
+    <tool name="Demultiplexer">
+      <a name="enable" val="false"/>
+    </tool>
     <tool name="Decoder">
       <a name="enable" val="false"/>
     </tool>
@@ -1360,7 +1363,7 @@
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="clabelcolor" val="#000000"/>
     <appear>
-      <rect fill="#ffffff" height="50" stroke="#ff0000" stroke-width="2" width="50" x="50" y="50"/>
+      <rect fill="#ffffff" height="50" stroke="#60ff9c" stroke-width="2" width="50" x="50" y="50"/>
       <polyline fill="none" points="94,57 100,60 94,64" stroke="#000000"/>
       <polyline fill="none" points="95,87 101,90 95,94" stroke="#000000"/>
       <polyline fill="none" points="51,67 57,70 51,74" stroke="#000000"/>
