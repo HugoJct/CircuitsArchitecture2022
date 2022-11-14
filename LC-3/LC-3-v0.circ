@@ -1360,7 +1360,7 @@
     <a name="circuit" val="NZP"/>
     <a name="clabel" val="NZP"/>
     <a name="clabelup" val="north"/>
-    <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="clabelfont" val="SansSerif plain 6"/>
     <a name="clabelcolor" val="#000000"/>
     <appear>
       <rect fill="#ffffff" height="50" stroke="#60ff9c" stroke-width="2" width="50" x="50" y="50"/>
@@ -1383,15 +1383,10 @@
     <wire from="(220,180)" to="(220,190)"/>
     <wire from="(240,480)" to="(240,490)"/>
     <wire from="(260,140)" to="(260,150)"/>
-    <wire from="(350,110)" to="(350,140)"/>
     <wire from="(180,70)" to="(270,70)"/>
     <wire from="(180,110)" to="(270,110)"/>
-    <wire from="(450,120)" to="(450,230)"/>
     <wire from="(250,160)" to="(270,160)"/>
-    <wire from="(410,90)" to="(420,90)"/>
-    <wire from="(440,120)" to="(450,120)"/>
     <wire from="(130,490)" to="(140,490)"/>
-    <wire from="(350,140)" to="(420,140)"/>
     <wire from="(250,220)" to="(250,230)"/>
     <wire from="(220,190)" to="(270,190)"/>
     <wire from="(110,290)" to="(340,290)"/>
@@ -1399,7 +1394,6 @@
     <wire from="(180,120)" to="(270,120)"/>
     <wire from="(250,230)" to="(340,230)"/>
     <wire from="(260,150)" to="(270,150)"/>
-    <wire from="(340,70)" to="(350,70)"/>
     <wire from="(190,210)" to="(190,220)"/>
     <wire from="(250,150)" to="(250,160)"/>
     <wire from="(230,170)" to="(230,180)"/>
@@ -1410,7 +1404,6 @@
     <wire from="(180,90)" to="(270,90)"/>
     <wire from="(180,130)" to="(270,130)"/>
     <wire from="(160,470)" to="(250,470)"/>
-    <wire from="(330,140)" to="(350,140)"/>
     <wire from="(250,220)" to="(270,220)"/>
     <wire from="(180,140)" to="(260,140)"/>
     <wire from="(160,480)" to="(240,480)"/>
@@ -1427,7 +1420,6 @@
     <wire from="(340,70)" to="(340,230)"/>
     <wire from="(340,250)" to="(340,290)"/>
     <wire from="(180,200)" to="(200,200)"/>
-    <wire from="(420,90)" to="(420,130)"/>
     <wire from="(180,210)" to="(190,210)"/>
     <wire from="(340,230)" to="(420,230)"/>
     <wire from="(460,370)" to="(490,370)"/>
@@ -1472,28 +1464,58 @@
     <wire from="(560,220)" to="(570,220)"/>
     <wire from="(340,250)" to="(530,250)"/>
     <wire from="(350,260)" to="(560,260)"/>
-    <wire from="(450,230)" to="(520,230)"/>
+    <wire from="(430,90)" to="(430,130)"/>
+    <wire from="(420,90)" to="(430,90)"/>
+    <wire from="(450,120)" to="(460,120)"/>
+    <wire from="(420,150)" to="(430,150)"/>
+    <wire from="(360,110)" to="(360,140)"/>
+    <wire from="(360,140)" to="(430,140)"/>
+    <wire from="(330,140)" to="(360,140)"/>
+    <wire from="(340,70)" to="(360,70)"/>
+    <wire from="(460,120)" to="(460,230)"/>
+    <wire from="(460,230)" to="(520,230)"/>
+    <comp lib="6" loc="(406,332)" name="Text">
+      <a name="text" val="Test flag P"/>
+      <a name="font" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="6" loc="(405,413)" name="Text">
+      <a name="text" val="Test flag N"/>
+      <a name="font" val="SansSerif plain 8"/>
+    </comp>
     <comp lib="1" loc="(460,370)" name="AND Gate"/>
-    <comp lib="6" loc="(115,260)" name="Text">
-      <a name="text" val="(Resultat du calcul courant)"/>
+    <comp lib="6" loc="(451,507)" name="Text">
+      <a name="text" val="Si l'instruction courante est BR"/>
+      <a name="font" val="SansSerif plain 8"/>
     </comp>
     <comp lib="1" loc="(460,330)" name="AND Gate"/>
     <comp lib="6" loc="(98,528)" name="Text">
       <a name="text" val="(Instruction courante)"/>
+    </comp>
+    <comp lib="1" loc="(420,90)" name="AND Gate">
+      <a name="size" val="50"/>
+      <a name="negate0" val="true"/>
+      <a name="negate1" val="true"/>
+    </comp>
+    <comp lib="6" loc="(292,242)" name="Text">
+      <a name="text" val="Si le bit 15 vaut 1 -&gt; N"/>
+      <a name="font" val="SansSerif plain 8"/>
     </comp>
     <comp lib="0" loc="(130,220)" name="Pin">
       <a name="width" val="16"/>
       <a name="tristate" val="false"/>
       <a name="label" val="RES"/>
     </comp>
-    <comp lib="1" loc="(580,380)" name="AND Gate"/>
-    <comp lib="1" loc="(410,90)" name="AND Gate">
-      <a name="size" val="50"/>
-      <a name="negate0" val="true"/>
-      <a name="negate1" val="true"/>
+    <comp lib="6" loc="(411,58)" name="Text">
+      <a name="text" val="Si le registre != zéro et bit n°15 != 1 -&gt; P"/>
+      <a name="font" val="SansSerif plain 6"/>
     </comp>
-    <comp lib="6" loc="(657,357)" name="Text">
+    <comp lib="1" loc="(580,380)" name="AND Gate"/>
+    <comp lib="6" loc="(620,338)" name="Text">
       <a name="text" val="Test de saut : vrai si au moins un flag est vrai"/>
+    </comp>
+    <comp lib="6" loc="(404,374)" name="Text">
+      <a name="text" val="Test flag Z"/>
+      <a name="font" val="SansSerif plain 8"/>
     </comp>
     <comp lib="0" loc="(350,290)" name="Splitter">
       <a name="facing" val="south"/>
@@ -1509,6 +1531,14 @@
       <a name="output" val="true"/>
       <a name="label" val="TestNZP"/>
       <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="6" loc="(563,160)" name="Text">
+      <a name="text" val="Si WriteReg vaut 1: on met à jour NZP$Sinon on ne change pas la valeur"/>
+      <a name="font" val="SansSerif plain 8"/>
+    </comp>
+    <comp lib="6" loc="(217,50)" name="Text">
+      <a name="text" val="Si tous les bits sont à zéro -&gt; Z"/>
+      <a name="font" val="SansSerif plain 8"/>
     </comp>
     <comp lib="0" loc="(160,220)" name="Splitter">
       <a name="fanout" val="16"/>
@@ -1538,11 +1568,6 @@
     <comp lib="1" loc="(520,370)" name="OR Gate">
       <a name="inputs" val="3"/>
     </comp>
-    <comp lib="0" loc="(440,120)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="fanout" val="3"/>
-      <a name="incoming" val="3"/>
-    </comp>
     <comp lib="0" loc="(570,220)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -1553,6 +1578,11 @@
     <comp lib="1" loc="(460,410)" name="AND Gate"/>
     <comp lib="6" loc="(714,194)" name="Text">
       <a name="text" val="Valeur actuelle du registre d'état NZP"/>
+    </comp>
+    <comp lib="0" loc="(450,120)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="3"/>
     </comp>
     <comp lib="1" loc="(330,140)" name="AND Gate">
       <a name="size" val="50"/>
@@ -1577,6 +1607,9 @@
     <comp lib="0" loc="(110,290)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="WriteReg"/>
+    </comp>
+    <comp lib="6" loc="(83,178)" name="Text">
+      <a name="text" val="(Resultat du calcul courant)"/>
     </comp>
     <comp lib="0" loc="(130,490)" name="Pin">
       <a name="width" val="16"/>
