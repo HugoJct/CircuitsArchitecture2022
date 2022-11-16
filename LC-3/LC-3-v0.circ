@@ -2541,7 +2541,7 @@
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="clabelcolor" val="#000000"/>
     <appear>
-      <rect fill="none" height="69" stroke="#ffa156" stroke-width="2" width="105" x="51" y="51"/>
+      <rect fill="none" height="69" stroke="#60ff9c" stroke-width="2" width="105" x="51" y="51"/>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="103" y="86">WriteVal</text>
       <polyline fill="none" points="156,77 163,81 157,86" stroke="#000000"/>
       <polyline fill="none" points="52,65 59,69 53,74" stroke="#000000"/>
