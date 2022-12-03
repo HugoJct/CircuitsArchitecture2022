@@ -1,1 +1,6 @@
 *.backup
+*.obj
+*.sym
+*.c
+*.mem
+
