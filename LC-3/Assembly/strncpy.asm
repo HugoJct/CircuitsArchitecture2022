@@ -6,7 +6,7 @@
 
 		LEA R1, str		;;load the source address in R1
 		LEA R2, str_dest	;;load the source address in R2
-		LD R0, count
+		LD R0, count		;;load the number of characters to copy
 
 		BRz end		;;check if R0 > 0
 
@@ -14,10 +14,10 @@ strncpy_loop:	LDR R3, R1, 0	;;load the next character in src string
 		STR R3, R2, 0	;;store character at R2
 		ADD R1, R1, 1	;;go to next character in R1
 		ADD R2, R2, 1	;;go to next memory slot in R2
-		ADD R0, R0, -1
-		BRp strncpy_loop	;;loop 
-end: 		AND R3, R3, 0
-		STR R3, R2, 0	
+		ADD R0, R0, -1	;;decrement counter
+		BRp strncpy_loop	;;if counter > 0 -> loop
+end: 		AND R3, R3, 0	;;reset R3
+		STR R3, R2, 0	;; terminate newly copied string with \0
 		NOP
 
 count: .FILL 7
