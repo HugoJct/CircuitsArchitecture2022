@@ -2,5 +2,5 @@
 *.obj
 *.sym
 *.c
-*.mem
+LC-3/Assembly/*.mem
 
