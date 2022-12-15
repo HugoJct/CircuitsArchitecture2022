@@ -27,7 +27,7 @@ skip:
 
 skip2:
     AND R0, R0, 0       ; initialisation registre de retour
-    AND R0, R0, R3      ; ajout de la différence entre char1 et char2 dans R0
+    ADD R0, R0, R3      ; ajout de la différence entre char1 et char2 dans R0
     RET
 
 end : 
