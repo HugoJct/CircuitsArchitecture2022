@@ -27,6 +27,6 @@ skip2:
 end: NOP
 
 str: .STRINGZ "hello World !"
-char: .FILL x68
+char: .FILL x57
 	
 .END
