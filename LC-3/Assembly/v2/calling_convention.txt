@@ -1,4 +1,4 @@
 Convention d'appel:
-	- Les arguments de fonction sont passés sur la pile de bas en haut (premier argument tout en haut)
+	- Les arguments de fonction sont passés sur la pile de droite à gauche (premier argument tout en haut)
 	- Les registres R0-R6 sont callee-save
 	- Le registre R7 est caller-save
