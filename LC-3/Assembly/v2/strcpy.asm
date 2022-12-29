@@ -28,8 +28,8 @@ main:
 
 	
 
-;;@param R1 start address of the string to copy
-;;@param R2 address to copy R0 to
+;;@param start address of the string to copy
+;;@param address to copy R0 to
 ;;
 ;; Registres à sauvegarder:
 ;;	- R1
