@@ -29,14 +29,15 @@ main:
 
 
 
-;@param adresse de la chaîne à parcourir
-;@param caractère à chercher
-;@return R0 adresse de la première occurence du caractère
-
-;registres auxiliaires à sauvegarder:
-;	-R1
-;	-R2
-;	-R3
+;;@param adresse de la chaîne à parcourir
+;;@param caractère à chercher
+;;
+;;registres auxiliaires à sauvegarder:
+;;	-R1
+;;	-R2
+;;	-R3
+;;
+;;@return R0 adresse de la première occurence du caractère
 
 index:
 	;sauvegarde de l'état des registres
