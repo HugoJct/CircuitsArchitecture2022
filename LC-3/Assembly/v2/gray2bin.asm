@@ -16,7 +16,7 @@ main:
 
 	TRAP x25
 
-number: 	.FILL 7
+number: 	.FILL x41AC
 stackstart:	.BLKW 100
 stackend:
 
@@ -25,67 +25,61 @@ stackend:
 ; Registres à sauvegarder:
 ;	- R1
 ;	- R2
-; 	- R3
-;	- R4
 ;
 ;@return x en binaire
 gray2bin:
-
-		ADD R6, R6, -5
-		STR R7, R6, 4
-		STR R4, R6, 3
-		STR R3, R6, 2
+		ADD R6, R6, -3
+		STR R7, R6, 2
 		STR R2, R6, 1
-		STR R1, R6, 0
+		STR R1, R6, 0		
 
-		LDR R2, R6, 5	;R2 = nombre à convertir
+		LDR R2, R6, 3	;R2 = nombre à convertir
 
-		;-------------------------------------;
-		LD R4, count
-	
+		AND R1, R1, 0
+		ADD R1, R1, R2	;R1 = R2
+
 		ADD R6, R6, -1
 		STR R2, R6, 0
 		JSR div2	;R0 = R2 / 2
 		ADD R6, R6, 1
 
-gray2bin_loop:	
-		ADD R4, R4, -1
+		AND R2, R2, 0
+		ADD R2, R2, R0	; R2 = R0
+
+		AND R0, R0, R0
 		BRn gray2bin_end
-
-		AND R1, R1, 0
-		ADD R1, R1, R0	;R1 = R0	
-
+gray2bin_loop:	
 		ADD R6, R6, -2
 		STR R2, R6, 1
 		STR R1, R6, 0
-		JSR xor		; R0 = R1 xor R2
+		JSR xor		;R0 = R1 xor R2
 		ADD R6, R6, 2
-
-		AND R3, R3, 0
-		ADD R3, R3, R0	; R3 = R0
+		
+		AND R1, R1, 0
+		ADD R1, R1, R0	;R1 = R0 
 
 		ADD R6, R6, -1
-		STR R1, R6, 0
-		JSR div2	; R0 = R1 / 2
-		ADD R6, R6, 1	
-	
-		BR gray2bin_loop
-		;-------------------------------------;
+		STR R2, R6, 0
+		JSR div2	;R0 = R2 / 2
+		ADD R6, R6, 1
 
+		AND R2, R2, 0
+		ADD R2, R2, R0	; R2 = R0
+
+		AND R0, R0, R0
+		BRz gray2bin_end
+		
+		BR gray2bin_loop		
 gray2bin_end:
-	
 		AND R0, R0, 0
-		ADD R0, R0, R3	
+		ADD R0, R0, R1
 
-		LDR R7, R6, 4
-		LDR R4, R6, 3
-		LDR R3, R6, 2
+		LDR R7, R6, 2
 		LDR R2, R6, 1
-		LDR R1, R6, 0
-		ADD R6, R6, 5
-
+		LDR R1, R6, 0		
+		ADD R6, R6, 3
+	
 		RET
-count:		.FILL 16
 
 ;@param first number x
 ;@param second number y
