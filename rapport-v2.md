@@ -8,7 +8,7 @@
 
 Si WriteReg = 1, alors on met à jour les flags NZP, sinon ceux-ci gardent leur valeur précédente. Cela est fait grâce à un multiplexeur permettant de sélectionner l'entrée désirée.
 
-Le résultat du calcul est négatif si le bit de poids fort est 1 (complément à deux), il est nul si tous ses bits sont à zéro et positif si aucune des deux conditions précédentes ne sont remplies.
+Le résultat du calcul est négatif si le bit de poids fort est à 1 (complément à deux), il est nul si tous ses bits sont à zéro et positif si aucune des deux conditions précédentes n'est remplie.
 
 ---
 
@@ -23,7 +23,7 @@ La condition de saut est évaluée vraie si l'instruction courante est un branch
 ---
 
 Les instructions étant catégorisées par type dans leur tableau de Karnaugh, il suffit de regarder les deux premiers bits de leur code d'opération pour pouvoir les différencier.  
-Seuls les chargements et les opérations aithmétiques peuvent modifier les registres.
+Seuls les chargements et les opérations arithmétiques peuvent modifier les registres.
 
 ---
 
@@ -39,7 +39,7 @@ L'instruction SCAN est branchée sur l'emplacement laissé vide du LC-3.
 
 ---
 
-écrire des trucs 
+écrit val
 
 ---
 
