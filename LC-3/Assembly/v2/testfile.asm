@@ -3,30 +3,22 @@
 main:
 	LEA R6, stackend
 	LEA R0, str
-	LEA R1, str
+	LEA R1, str_dest
 
 	ADD R6, R6, -3
 	STR R7, R6, 2
 	STR R1, R6, 1
 	STR R0, R6, 0
 
-	JSR strcmp
+	JSR strcpy
 
 	LDR R7, R6, 2
 	ADD R6, R6, 3
 
 	TRAP x25
 
-
-; functions
-;index_pos: 	.FILL index
-;rindex_pos:	.FILL rindex
-;strcmp_pos: 	.FILL strcmp
-;strcpy_pos:	.FILL strcpy
-;strncpy_pos: 	.FILL strncpy
-
 ; constants
-str:		.STRINGZ "Hello World !"
+str:		.STRINGZ "Hello World !!"
 str_dest:	.STRINGZ "qsdlfkjqsdf/fjqsmlkdjf/ffqjslk673FH"
 		.BLKW 100
 stackend:	

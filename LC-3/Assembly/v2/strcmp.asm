@@ -1,5 +1,18 @@
 .ORIG x3000
 
+main:
+	LEA R6, stackend
+	LEA R0, str1
+	LEA R1, str2
+
+	ADD R6, R6, -2
+	STR R1, R6, 1
+	STR R0, R6, 0
+	JSR strcmp
+	ADD R6, R6, 2
+
+	TRAP x25
+
 ;; @param adresse début str1
 ;; @param adresse début str2
 ;;
@@ -40,7 +53,7 @@ strcmp_skip:
 strcmp_skip2:
 	AND R0, R0, 0       ; initialisation registre de retour
 	ADD R0, R0, R3      ; ajout de la différence entre char1 et char2 dans R0
-	BR end
+	BR strcmp_end
 
 strcmp_end_equal: 
 	AND R0, R0, 0       ; on initialise de registre de destination pour le retour

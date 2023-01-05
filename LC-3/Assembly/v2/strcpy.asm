@@ -1,5 +1,18 @@
 .ORIG x3000
 
+main:
+	LEA R6, stackend
+	LEA R0, str
+	LEA R1, str_dest
+
+	ADD R6, R6, -2
+	STR R1, R6, 1
+	STR R0, R6, 0
+	JSR strcpy
+	ADD R6,R6, 2
+
+	TRAP x25	
+
 ;;@param start address of the string to copy
 ;;@param address to copy R0 to
 ;;

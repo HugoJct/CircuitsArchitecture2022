@@ -1,5 +1,18 @@
 .ORIG x3000
 
+main:
+	LEA R6, stackend
+	LEA R0, str
+	LD R1, char
+
+	ADD R6, R6, -2
+	STR R1, R6, 1
+	STR R0, R6, 0
+	JSR rindex
+	ADD R6, R6, 2
+
+	TRAP x25
+
 ; @param adresse de la chaîne à parcourir
 ; @param caractère à chercher
 ; @return R0 adresse de la première occurence du caractère

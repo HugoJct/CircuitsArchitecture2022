@@ -1,3 +1,9 @@
+# Avancement atteint :
+
+Toutes les instructions demandées sont implémentées dans le fichier Logisim.  
+Toutes les routines assembleur demandées sont implémentées de manière à ne pas modifier d'autres registres que celui utilisé pour la valeur de retour de la fonction (R0)
+
+
 # Partie logisim :
 
 ## **Flags NZP** :
@@ -39,14 +45,6 @@ L'instruction SCAN est branchée sur l'emplacement laissé vide du LC-3.
 
 ---
 
-écrit val
-
----
-
-## **Registre PC** : 
-
---- 
-
 La valeur de PC est modifiée si l'instruction courante est un saut et que les conditions sur NZP sont satisfaites.  
 
 PC prend la valeur de BaseR si l'instruction courante est JMP ou JSRR et est incrémenté de l'offset spécifié sinon. Cet offset est codé sur 9 bits dans le cas de BR et sur 11 bits dans le cas de JSR.
@@ -69,3 +67,51 @@ Lorsque ce pin est à 1 en revanche:
 Ces actions ne sont effectuées que lors de la phase d'exécution de l'instruction (pin Exec à 1).
 
 ---
+
+# Partie Assembleur :
+
+## Routines de test des instructions : 
+
+Les fichiers de test des instructions du fichier logisim sont dans le dosssier /LC-3/MemFiles, un fichier assembleur est associé à certains de ces fichiers pour des questions de compréhension.
+
+## **index** :
+
+La routine prend en argument :
+- la chaîne str "hello World !" située à l'adresse 3020
+-  le caractère 'W' 
+
+et retourne l'adresse de la première occurence de 'W' dans str (3026 dans ce cas)
+
+## **rindex** : 
+
+La routine prend en argument :
+- la chaîne str "Hello World !" située à l'adresse 3021
+- le caractère 'W'
+
+et retourne l'adresse de la première occurence de 'W' dans str (302B dans ce cas)
+
+## **strcmp** :
+
+La routine prend en argument:
+- La chaîne str1 "Hello World !"
+- La chaîne str2 "Healo" 
+
+et retourne la différence entre les codes ASCII des deux premiers caractères différents entre str1 et str2
+
+## **strcpy** :
+
+La routine prend en argument :
+- La chaîne str1 "Hello World !"
+- La chaîne str2 "Here starts the trash" 
+
+et copie le contenur de str1 dans str2, str2 contient donc "Hello World !he trash" après son exécution
+
+
+## **strnpy** : 
+
+La routine prend en argument : 
+- La chaîne str1 "Hello World !"
+- La chaîne str2 "Here starts the trash"
+- La valeur 7
+
+et copie les 7 premiers caractères de str1 dans str2, str2 contient donc "Hello Warts the trash"

@@ -1,5 +1,20 @@
 .ORIG x3000
 
+main:
+	LEA R6, stackend
+	LEA R0, str
+	LEA R1, str_dest
+	LD R2, count
+
+	ADD R6, R6, -3
+	STR R2, R6, 2
+	STR R1, R6, 1
+	STR R0, R6, 0
+	JSR strncpy
+	ADD R6, R6, 3
+
+	TRAP x25
+
 ;;@param number of characters to copy
 ;;@param start address of the string to copy
 ;;@param address to copy R0 to
@@ -26,7 +41,7 @@ strncpy:
 		AND R0, R0, 0
 		ADD R0, R0, R2
 
-		BRz end		;;check if R0 > 0
+		BRz strncpy_end		;;check if R0 > 0
 
 strncpy_loop:	LDR R3, R1, 0	;;load the next character in src string
 		STR R3, R2, 0	;;store character at R2
