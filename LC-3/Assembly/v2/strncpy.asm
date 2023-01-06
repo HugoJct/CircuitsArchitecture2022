@@ -33,13 +33,9 @@ strncpy:
 		STR R1,	R6, 0
 
 		; chargement des arguments
-		LDR R0, R6, 3
-		LDR R1, R6, 4
-		LDR R2, R6, 5	
-
-		; adresse de destinationd e R0
-		AND R0, R0, 0
-		ADD R0, R0, R2
+		LDR R1, R6, 3
+		LDR R2, R6, 4
+		LDR R0, R6, 5	
 
 		BRz strncpy_end		;;check if R0 > 0
 
