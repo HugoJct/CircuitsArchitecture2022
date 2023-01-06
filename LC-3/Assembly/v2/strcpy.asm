@@ -38,7 +38,7 @@ strcpy:
 		ADD R0, R0, R2
 	
 strcpy_loop:	LDR R3, R1, 0	;;load the next character in src string
-		BRz end		;;if it is 0 -> end
+		BRz strcpy_end		;;if it is 0 -> end
 		STR R3, R2, 0	;;store character at R2
 		ADD R1, R1, 1	;;go to next character in R1
 		ADD R2, R2, 1	;;go to next memory slot in R2
