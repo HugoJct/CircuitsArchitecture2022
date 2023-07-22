@@ -100,7 +100,7 @@ Le rendu du projet est prévu en deux sous-rendus:
 - Rendu du **16 décembre 2022 @ 18h**: projet minimal 
 - Rendu du **6 janvier 2023 @ 18h**: projet avancé (le plus avancé possible)
 
-Le projet est à rendre par mail à l'adresse suivante: **guatto@irif.fr** sous la forme d'une archive tar contenant:
+Le projet est à rendre sous la forme d'une archive tar contenant:
 
 - Le fichier logisim du LC-3 complété (logisimLC-3-v*.circ)
 - Des programmes de test pour chaque instruction complétée
